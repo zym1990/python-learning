@@ -1,0 +1,22 @@
+1.制表符与换行符均需要双引号解析
+
+制表符 \t
+>>>print("\tpython")
+   python
+
+换行符\n
+>>>print("Languages:\nPython\nC\nJavaScript")
+Languages:
+Python
+C
+JavaScript
+
+2.删除空白，类似与php的trim()
+
+strip(),lstrip(),rstrip()去除左右两边空格
+>>>a = ' python '
+>>>a.strip()
+
+3.查看python设计原则
+
+>>>import this
