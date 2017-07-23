@@ -64,3 +64,35 @@ len()获取列表长度
 #循环列表
 for value in values:
     print(value)
+
+
+#数字列表
+for value in range(1,5):
+    print(value)
+
+结果：1 2 3 4
+range()生成一系列数字，从指定的第一个值开始到第二个值之前结束
+
+list()可将range()的结果转化为列表
+message = list(range(1,5))
+print(message)
+结果：[1,2,3,4]
+
+range(2,11,2) 结果：2 4 6 8 10
+
+#对数字列表进行简单的统计计算
+min() max() sum()
+
+
+#列表解析
+squares = [value**2 for value in range(1,11)]
+
+
+#列表切片
+players = ['charles','martina','michael','florence','eli']
+print(players[0:3]) 输出从索引0到索引2的列表,若没有指定起始索引，将默认从头开始截取，不指定结束索引，将截取至最后
+
+
+#元祖
+不可变的列表被称为元祖，元祖使用小括号()
+元祖数据不可改变，但可给元祖变量重新赋值
