@@ -1,3 +1,5 @@
+#以下总结以python3为基础
+
 1.制表符与换行符均需要双引号解析
 
 制表符 \t
@@ -20,3 +22,45 @@ strip(),lstrip(),rstrip()去除左右两边空格
 3.查看python设计原则
 
 >>>import this
+
+4.字符串部分方法使用
+
+#title()修改单词首字母为大写
+name="ada lovelace"
+print(name.title())
+结果：Ada Lovelace
+
+#upper() lower()将单词全部转化为大写或小写
+
+5.列表
+
+列表用[]表示，类似于php中的数组
+
+bicycles=['a','b','c']
+列表访问：print(bicycles[0])，访问最后一个元素print(bicycles[-1])
+列表末尾追加元素：bicycles.append('e')
+列表中插入元素：bicycles.insert(4,'new') #为新元素指定索引和值
+
+#del pop()均需要索引删除元素，若不知道索引，只知道值，
+#可使用delValue=bicycles.remove('c'),remove()方法只删除第一个匹配的值
+删除指定元素：del bicycles[0]
+删除并获取到删除的元素：delValue = bicycles.pop(),delValue为删除掉的值，pop()不传值表示删除末尾元素，也可传入要删除的值的索引
+
+组织列表：
+sort()对列表进行排序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+print(cars)
+// 按字母顺序排序，sort()永久性修改列表排列顺序
+cars.sort(reverse=True) // 与sort()排列顺序相反，对列表排列顺序的修改是永久性的
+
+sorted()临时修改排列顺序，并不会影响原列表排列顺序
+sorted(reverse=True)
+
+reverse() 翻转列表元素，永久性修改元素的排列顺序
+
+len()获取列表长度
+
+#循环列表
+for value in values:
+    print(value)
