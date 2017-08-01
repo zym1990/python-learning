@@ -16,3 +16,10 @@ print(squares)
 
 for value in range(1,21,2):
     print(value)
+
+car = 'subaru'
+print("is car == 'subaru' ? i predict true")
+print(car == 'subaru')
+
+print("\nIs car == 'audi'? I predict False.")
+print(car == 'audi')

@@ -87,7 +87,6 @@ min() max() sum()
 #列表解析
 squares = [value**2 for value in range(1,11)]
 
-
 #列表切片
 players = ['charles','martina','michael','florence','eli']
 print(players[0:3]) 输出从索引0到索引2的列表,若没有指定起始索引，将默认从头开始截取，不指定结束索引，将截取至最后
@@ -96,3 +95,34 @@ print(players[0:3]) 输出从索引0到索引2的列表,若没有指定起始索
 #元祖
 不可变的列表被称为元祖，元祖使用小括号()
 元祖数据不可改变，但可给元祖变量重新赋值
+
+#in检查特定值是否包含在列表中,not in检查特定值是否不包含在列表中：
+request_toppings = ['mushrooms', 'onions', 'pineapple']
+'mushurooms' in request_toppings
+
+#字典，字典获取元素的顺序是不固定的
+字典是一系列的键值对
+alien_o = {'color':'green', 'points':5}
+print(alien_o['color'])
+添加键值对：
+alien_o['x_position'] = 0
+删除：del alien_o['x_position']
+
+字典循环：
+user_o = {
+    'username':'efermi',
+    'first':'enrico',
+    'last':'fermi'
+}
+
+for value in user_o:
+    print(value)
+
+for value in user_o获取到字典的键值；
+for value in user_o.items()获取结果为元祖('username','efermi')('first','enrico')('last','fermi')
+for key, value in user_o.items()分别获取对应的key和value
+for value in user_o.keys()遍历字典中的所有键值
+
+user_o.keys()返回字典中的所有键，可拿来直接使用
+
+for value in sorted(user_o.keys())使用sorted()来获得按特定排序的键列表的副本
