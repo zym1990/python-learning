@@ -1,0 +1,167 @@
+python
+
+正则表达式
+
+特殊符号和字符
+
+re1|re2匹配re1或者re2
+. 匹配除了\n之外的任何字符
+*匹配0次或多次
++匹配1次或多次
+？匹配0次或1次
+\d匹配任何十进制数字 \D与\d相反
+\w匹配任何字母数字字符 \W与\w相反
+\s匹配任何空格字符，与[\n\t\r\v\f]相同，\S与\s相反
+\b匹配任何单词边界
+(?:\w+\.)*表示该子组信息不保存
+(?=pattern)正向肯定匹配windows(?=95|98|NT|2000),只能匹配windows2000中的windows,但不能匹配windows3.2中的windows
+(?!pattern)正向否定，与(?=pattern)相反
+(?<=pattern)反向肯定，(?<=95|98|NT|2000)windows,能匹配2000windows中的windows,而不能匹配3.1windows中的windows
+(?<!pattern)反向否定，与(?<=)相反
+(?(id/name)Y|N),若id或name存在，则匹配Y，反之匹配N
+(?#)表示注释，所有内容均被忽略
+(?P<name>group)对组进行命名，可用(?P=name)引用
+
+网络编程
+
+因特网客户端编程
+
+多线程编程
+
+GUI编程
+
+数据库编程
+
+字典
+
+字典的表示及添加删除访问
+
+字典获取元素的顺序是不固定的
+字典是一系列的键值对
+alien_o = {'color':'green', 'points':5}
+print(alien_o['color'])
+添加键值对：
+alien_o['x_position'] = 0
+删除：del alien_o['x_position']
+
+字典的循环
+
+user_o = {
+    'username':'efermi',
+    'first':'enrico',
+    'last':'fermi'
+}
+
+for value in user_o:
+    print(value)
+
+for value in user_o获取到字典的键值；
+for value in user_o.items()获取结果为元祖('username','efermi')('first','enrico')('last','fermi')
+for key, value in user_o.items()分别获取对应的key和value
+for value in user_o.keys()遍历字典中的所有键值
+for value in user_o.values()遍历字典中的所有值
+
+user_o.keys()返回字典中的所有键，可拿来直接使用
+
+for value in sorted(user_o.keys())使用sorted()来获得按特定排序的键列表的副本
+
+元祖
+
+不可变的列表被称为元祖，元祖使用小括号()
+元祖数据不可改变，但可给元祖变量重新赋值
+
+列表
+
+列表的基础用法
+
+列表用[]表示，类似于php中的数组
+
+bicycles=['a','b','c']
+列表访问：print(bicycles[0])，访问最后一个元素print(bicycles[-1])
+列表末尾追加元素：bicycles.append('e')
+列表中插入元素：bicycles.insert(4,'new') #为新元素指定索引和值
+
+#del pop()均需要索引删除元素，若不知道索引，只知道值，
+#可使用delValue=bicycles.remove('c'),remove()方法只删除第一个匹配的值
+删除指定元素：del bicycles[0]
+删除并获取到删除的元素：delValue = bicycles.pop(),delValue为删除掉的值，pop()不传值表示删除末尾元素，也可传入要删除的值的索引
+
+组织列表
+
+sort()对列表进行排序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+print(cars)
+// 按字母顺序排序，sort()永久性修改列表排列顺序
+cars.sort(reverse=True) // 与sort()排列顺序相反，对列表排列顺序的修改是永久性的
+
+sorted()临时修改排列顺序，并不会影响原列表排列顺序
+sorted(reverse=True)
+
+reverse() 翻转列表元素，永久性修改元素的排列顺序
+
+len()获取列表长度
+
+循环列表
+
+for value in values:
+    print(value)
+
+数字列表
+
+for value in range(1,5):
+    print(value)
+
+结果：1 2 3 4
+range()生成一系列数字，从指定的第一个值开始到第二个值之前结束
+
+list()可将range()的结果转化为列表
+message = list(range(1,5))
+print(message)
+结果：[1,2,3,4]
+
+range(2,11,2) 结果：2 4 6 8 10
+
+#对数字列表进行简单的统计计算
+min() max() sum()
+
+列表解析
+
+squares = [value**2 for value in range(1,11)]
+
+列表切片
+
+players = ['charles','martina','michael','florence','eli']
+print(players[0:3]) 
+输出从索引0到索引2的列表,若没有指定起始索引，将默认从头开始截取，不指定结束索引，将截取至最后
+
+判断值是否存在与列表
+
+in检查特定值是否包含在列表中,not in检查特定值是否不包含在列表中：
+request_toppings = ['mushrooms', 'onions', 'pineapple']
+'mushurooms' in request_toppings
+
+Python基础
+
+制表符与换行符
+
+制表符与换行符均需要双引号解析
+制表符 \t
+>>>print("\tpython")
+   python
+
+换行符\n
+>>>print("Languages:\nPython\nC\nJavaScript")
+Languages:
+Python
+C
+JavaScript
+
+删除空白
+
+strip(),lstrip(),rstrip()去除左右两边空格
+
+字符串处理函数
+
+title()修改单词首字母为大写
+upper() lower()将单词全部转化为大写或小写
